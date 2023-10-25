@@ -25,19 +25,26 @@ td {
     margin-left: 40%;
     margin-right: 40%;
     padding: 10px;
+    border-radius: 10px;
 }
 #winbox {
     border: 4px solid white;
     width: 40%;
     margin: 30px auto;
+    border-radius: 10px;
 }
 #win {
     margin: 30px;
+    margin-bottom: 0;
 }
 #dataset {
     width: 90%;
     height: 300px;
     padding: 30px;
+    padding-bottom: 20px;
+}
+#json {
+    margin: 20px
 }
 body {
     font-family: 'Lucida Sans';

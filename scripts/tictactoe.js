@@ -7,7 +7,7 @@ var counter = document.getElementById("counter");
 var number = document.getElementById("number");
 
 function cellList () {
-    // Array used
+    // Array
     let pos = [];
     for (let c of cells) {
         pos.push(c.innerHTML);
@@ -18,7 +18,7 @@ function cellList () {
 function occur(cl) {
     occ = 0;
     for (let i of database) {
-        // Use of JSON fetching and conditional branching
+        // Conditional branching
         if (JSON.stringify(i) === JSON.stringify(cl)) {
             occ +=1;
         }
@@ -37,12 +37,14 @@ function setSymbol (y) {
     console.log(database)
 }
 
+// JSON fetch (downloading and fetching locally was more applicable, since this data doesn't change.)
 async function getwins ()  {
     const response = await fetch("tic-tac-toe.json");
     const wins = await response.json();
     document.getElementById("json").innerHTML = JSON.stringify(wins);
 }
 getwins()
+
 // Array method used (.length)
 for (let i = 0; i < cells.length; i++) {
     cells.item(i).addEventListener("click", (function (y) {return function () {setSymbol(y);};})(i));
