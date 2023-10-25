@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="scripts/tictactoe.js"></script> 
-    <link rel="stylesheet" href="styles/tictactoe.css">
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
@@ -12,23 +10,27 @@
     <p>Click on a square to start. Every click will alternate symbols.</p>
     <table id="board">
         <tr>
-            <td id="cell_0">0</td>
-            <td id="cell_1">1</td>
-            <td id="cell_2">2</td>
+            <td id="cell_0"></td>
+            <td id="cell_1"></td>
+            <td id="cell_2"></td>
         </tr>
         <tr>
-            <td id="cell_3">3</td>
-            <td id="cell_4">4</td>
-            <td id="cell_5">5</td>
+            <td id="cell_3"></td>
+            <td id="cell_4"></td>
+            <td id="cell_5"></td>
         </tr>
         <tr>
-            <td id="cell_6">6</td>
-            <td id="cell_7">7</td>
-            <td id="cell_8">8</td>
+            <td id="cell_6"></td>
+            <td id="cell_7"></td>
+            <td id="cell_8"></td>
         </tr>
     </table>
-    <div class="counter">Number of times this position has been reached:</div>
-    <div id="number" class="counter">1</div>
-    <div id="test"></div>
+    <div class="counter">This position has been locally reached:</div>
+    <div id="number" class="counter">0 Times</div>
+    <div id="reset" class="button">Reset Board</div>
 </body>
+<footer>
+    <script type="text/javascript" src="scripts/tictactoe.js"></script> 
+    <link rel="stylesheet" href="styles/tictactoe.css">
+</footer>
 </html>

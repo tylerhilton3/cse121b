@@ -1,23 +1,52 @@
-var board = ["", "", "", "", "", "", "", "", ""];
 var symbolSwitch = 0;
 var symbols = ["X", "O"];
+var database = [];
 
 var cells = document.getElementsByTagName("td");
-var message = document.getElementById("message");
 var counter = document.getElementById("counter");
-var c0 = document.getElementById("cell_0");
-var c1 = document.getElementById("cell_1");
-var c2 = document.getElementById("cell_2");
-var c3 = document.getElementById("cell_3");
-var c4 = document.getElementById("cell_4");
-var c5 = document.getElementById("cell_5");
-var c6 = document.getElementById("cell_6");
-var c7 = document.getElementById("cell_7");
-var c8 = document.getElementById("cell_8");
+var number = document.getElementById("number");
 
-console.log(c8);
-function setSymbol () {
-    symbolSwitch += 1;
-    c8.innerHTML = symbols[(symbolSwitch % 2)];
+function cellList () {
+    let pos = [];
+    for (let c of cells) {
+        pos.push(c.innerHTML);
+    }
+    return pos;
 }
-c8.addEventListener("click", setSymbol);
+
+function occur(cl) {
+    occ = 0;
+    for (let i of database) {
+        // Use of JSON
+        if (JSON.stringify(i) === JSON.stringify(cl)) {
+            occ +=1;
+        }
+    }
+    return occ;
+}
+
+
+function setSymbol (y) {
+    symbolSwitch += 1;
+    cells.item(y).innerHTML = symbols[(symbolSwitch % 2)];
+    cL = cellList();
+    number.innerHTML = occur(cL) + " Times";
+    database.push(cL)
+    console.log(database)
+}
+
+for (let i = 0; i < cells.length; i++) {
+    cells.item(i).addEventListener("click", (function (y) {return function () {setSymbol(y);};})(i));
+};
+
+function reset () {
+    for (let c of cells) {
+        c.innerHTML = ""
+    }
+    symbolSwitch = 0;
+};
+
+
+
+
+document.getElementById("reset").addEventListener("click", reset);
