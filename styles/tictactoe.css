@@ -26,6 +26,19 @@ td {
     margin-right: 40%;
     padding: 10px;
 }
+#winbox {
+    border: 4px solid white;
+    width: 40%;
+    margin: 30px auto;
+}
+#win {
+    margin: 30px;
+}
+#dataset {
+    width: 90%;
+    height: 300px;
+    padding: 30px;
+}
 body {
     font-family: 'Lucida Sans';
     color: white;
